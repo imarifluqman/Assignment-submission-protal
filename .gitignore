@@ -1,0 +1,55 @@
+# Node modules
+node_modules/
+frontend/node_modules/
+backend/node_modules/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Build directories
+frontend/build/
+frontend/dist/
+backend/build/
+backend/dist/
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Cache and output files
+frontend/.cache/
+frontend/.next/
+frontend/.nuxt/
+frontend/out/
+backend/.cache/
+backend/.next/
+backend/.nuxt/
+backend/out/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Editor directories and files
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Production
+frontend/.pnp
+frontend/.pnp.js
+
+# TypeScript
+*.tsbuildinfo
+
+# Debug
+npm-debug.log*
+yarn-debug.log*

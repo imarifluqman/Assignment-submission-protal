@@ -1,0 +1,453 @@
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+html,body{
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	width: 100%;
+	/* overflow:hidden; */
+}
+
+
+.background-image {
+    font-family: 'Times New Roman', Times, serif;
+    background-image: url("https://media.istockphoto.com/id/1488684522/photo/pakistani-flag-paint-brush-on-white-background-the-concept-of-pakistan-drawing-brushstroke.webp?b=1&s=170667a&w=0&k=20&c=ZJjsqZQaucZ5UW44kL-ZA0gX-nsJUFw6g6E2j9GMWeA=");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center; /* Ensure the background is centered */
+    min-height: 100vh; /* Cover at least the viewport height */
+    width: 100vw; /* Cover full viewport width */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content horizontally */
+    justify-content: center; /* Center content vertically */
+}
+
+.instructor-background{
+	font-family: 'Times New Roman', Times, serif;
+    background-image: url("https://w0.peakpx.com/wallpaper/813/29/HD-wallpaper-green-white-star-satin-pakistan-flag-pakistan-flag.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center; /* Ensure the background is centered */
+    min-height: 100vh; /* Cover at least the viewport height */
+    width: 100vw; /* Cover full viewport width */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content horizontally */
+    justify-content: center; /* Center content vertically */
+}
+/* 
+body {
+	font-family: 'Times New Roman', Times, serif;
+    background-image: url("https://media.istockphoto.com/id/1488684522/photo/pakistani-flag-paint-brush-on-white-background-the-concept-of-pakistan-drawing-brushstroke.webp?b=1&s=170667a&w=0&k=20&c=ZJjsqZQaucZ5UW44kL-ZA0gX-nsJUFw6g6E2j9GMWeA=");
+    background-repeat: no-repeat;
+    background-size:cover;
+	height: 100vh;
+
+
+} */
+
+.forms-section {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	/* height: 100vh; */
+}
+
+.section-title {
+	font-family: 'Times New Roman', Times, serif;
+	margin-top: 0.8vh;
+	text-align: center;
+	font-size: 1.5em;
+	font-weight: bolder;
+	letter-spacing: 1px;
+	color:black;
+	text-transform: capitalize;
+}
+
+.forms {
+	display: flex;
+	align-items:flex-start;
+	/* margin-top: 1vh; */
+}
+
+.form-wrapper {
+	animation: hideLayer .3s ease-out forwards;
+}
+
+.form-wrapper.is-active {
+	animation: showLayer .3s ease-in forwards;
+}
+
+@keyframes showLayer {
+	50% {
+		z-index: 1;
+	}
+	100% {
+		z-index: 1;
+	}
+}
+
+@keyframes hideLayer {
+	0% {
+		z-index: 1;
+	}
+	49.999% {
+		z-index: 1;
+	}
+}
+
+.switcher {
+	position: relative;
+	cursor: pointer;
+	display: block;
+	/* margin-right: auto; */
+	margin-left: 8rem;
+	padding: 0;
+	text-transform:capitalize;
+	font-family: 'Times New Roman', Times, serif;
+	font-size: 1rem;
+	/* color:white; */
+	color:midnightblue;
+	background-color: transparent;
+	border: none;
+	outline: none;
+	transform: translateX(0);
+	transition: all .3s ease-out;
+}
+
+.switchers {
+	position: relative;
+	cursor: pointer;
+	display: block;
+	/* margin-right: auto; */
+	margin-left: 8rem;
+	padding: 0;
+	text-transform:capitalize;
+	font-family: 'Times New Roman', Times, serif;
+	font-size: 1rem;
+	/* color:white; */
+	color:white;
+	background-color: transparent;
+	border: none;
+	outline: none;
+	transform: translateX(0);
+	transition: all .3s ease-out;
+}
+
+.form-wrapper.is-active .switcher-login {
+	color:black;
+	cursor:not-allowed;
+	transform: translateX(90px);
+
+}
+
+.form-wrapper.is-active .switchers-login {
+	color:black;
+	cursor:not-allowed;
+	transform: translateX(90px);
+}
+.form-wrapper.is-active .switcher-signup {
+	color: black;
+	cursor:not-allowed;
+	transform: translateX(-90px);
+}
+
+.form-wrapper.is-active .switchers-signup {
+	color: black;
+	cursor:not-allowed;
+	transform: translateX(-90px);
+}
+.underline {
+	position: absolute;
+	bottom: 1rem;
+	left: 0;
+	overflow: hidden;
+	pointer-events: none;
+	width: 100%;
+	height: 1px;
+}
+
+.underline::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: inherit;
+	display: block;
+	width: inherit;
+	height: inherit;
+	background-color: currentColor;
+	transition: transform .2s ease-out;
+}
+
+.switcher-login .underline::before {
+	transform: translateX(101%);
+}
+
+.switchers-login .underline::before {
+	transform: translateX(101%);
+}
+
+
+.switcher-signup .underline::before {
+	transform: translateX(-101%);
+}
+
+.switchers-signup .underline::before {
+	transform: translateX(-101%);
+}
+.form-wrapper.is-active .underline::before {
+	transform: translateX(0);
+}
+
+.form {
+	overflow: hidden;
+	min-width: 30vw;
+	margin-top: 3rem;
+	padding: 1.2rem  1rem;
+	border-radius: 5%;
+	transform-origin: top;
+}
+
+.form-login {
+	animation: hideLogin .3s ease-out forwards;
+}
+
+.form-wrapper.is-active .form-login {
+	animation: showLogin .3s ease-in forwards;
+}
+
+@keyframes showLogin {
+	0% {
+		background: orange;
+		transform: translate(40%, 10px);
+	}
+	50% {
+		transform: translate(0, 0);
+	}
+	100% {
+		background-color: black;
+		transform: translate(35%, -20px);
+	}
+}
+
+@keyframes hideLogin {
+	0% {
+		background-color: navy;
+		transform: translate(35%, -20px);
+	}
+	50% {
+		transform: translate(0, 0);
+	}
+	100% {
+		background: #d7e7f1;
+		transform: translate(40%, 10px);
+	}
+}
+
+.form-signup {
+	animation: hideSignup .3s ease-out forwards;
+}
+
+.form-wrapper.is-active .form-signup {
+	animation: showSignup .3s ease-in forwards;
+}
+
+@keyframes showSignup {
+	0% {
+		background: gray;
+		transform: translate(-40%, 10px) scaleY(.8);
+	}
+	50% {
+		transform: translate(0, 0) scaleY(.8);
+	}
+	100% {
+		background-color:black;
+		transform: translate(-35%, -20px) scaleY(1);
+	}
+}
+
+@keyframes hideSignup {
+	0% {
+		background-color: orange;
+		transform: translate(-35%, -20px) scaleY(1);
+	}
+	50% {
+		transform: translate(0, 0) scaleY(.8);
+	}
+	100% {
+		background: #d7e7f1;
+		transform: translate(-40%, 10px) scaleY(.8);
+	}
+}
+
+.form fieldset {
+	position: relative;
+	opacity: 0;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	transition: all .3s ease-out;
+}
+
+.form-login fieldset {
+	transform: translateX(-50%);
+}
+
+.form-signup fieldset {
+	transform: translateX(50%);
+}
+
+.form-wrapper.is-active fieldset {
+	opacity: 1;
+	transform: translateX(0);
+	transition: opacity .4s ease-in, transform .35s ease-in;
+}
+
+
+
+.input-block {
+	margin-bottom: 0.8rem;
+}
+
+.input-block label {
+	font-size: 1rem;
+  color:white;
+}
+
+.input-block input {
+	display: block;
+	width: 100%;
+	margin-top: 0.5rem;
+	padding-right: 0.5rem;
+	padding-left: 0.5rem;
+	font-size: 1rem;
+	line-height: 1.5rem;
+	color:black;
+  background: #eef9fe;
+  border: 1px solid #cddbef;
+  border-radius: 3%;
+}
+
+.input-block select {
+	display: block;
+	width: 100%;
+	margin-top: 0.5rem;
+	padding-right: 0.5rem;
+	padding-left: 0.5rem;
+	font-size: 1.2rem;
+	line-height: 2rem;
+	color:black;
+  background: #eef9fe;
+  border: 1px solid #cddbef;
+  border-radius: 3%;
+}
+
+.form [type='submit'] {
+	opacity: 0;
+	display: block;
+	min-width: 8rem;
+	margin: 1px auto 1px;
+	font-size: 1rem;
+	line-height: 6vh;
+	border-radius: 20%;
+	border: none;
+	transition: all .3s ease-out;
+}
+
+.form-wrapper.is-active .form [type='submit'] {
+	opacity: 1;
+	transform: translateX(0);
+	transition: all .4s ease-in;
+}
+
+.btn-login {
+	cursor: pointer;
+	color:gray;
+	background: black;
+	box-shadow: inset 0 0 0 2px green;
+	transform: translateX(-30%);
+}
+
+.btn-login:hover{
+	color:white;
+	background: green;
+	box-shadow: inset 0 0 0 2px gray;
+	transform: translateX(-30%);
+
+}
+.btn-signup {
+	cursor: pointer;
+	color:gray;
+	background: black;
+	box-shadow: inset 0 0 0 2px green;
+	transform: translateX(30%);
+}
+
+.btn-signup:hover{
+	color:white;
+	background: green;
+	box-shadow: inset 0 0 0 2px gray;
+	transform: translateX(30%);
+
+}
+
+.logo{
+	margin-top: 10vh;
+}
+
+@media (max-width:900px){
+	.logo{
+		margin-top: 20vh;
+	}
+
+	
+}
+
+@media (max-width:600px) {
+	.form{
+		min-width: 50vw;
+		/* min-width: 50vh; */
+	}
+	.logo-image{
+		margin-top: 1rem;
+		width:80px;
+	}
+	.input-block input {
+		margin-top: 0.3rem;
+	}
+	.section-title{
+		margin-top: 2vh;
+	}
+	body {
+        background-size: cover; 
+	
+	}
+	.logo{
+		margin-top: 1vh;
+	}
+	.switcher{
+		text-transform: capitalize;
+		margin-left: 2.6rem;
+		font-size: 1rem;
+	}
+	.switchers{
+		text-transform: capitalize;
+		margin-left: 2.6rem;
+		font-size: 1rem;
+	}
+	
+
+}
+
+
+
+.loginRegister{
+  background-color: black;
+  color: white;
+}
